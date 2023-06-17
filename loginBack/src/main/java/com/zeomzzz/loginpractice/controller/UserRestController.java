@@ -32,7 +32,7 @@ public class UserRestController {
 	UserService us;
 	
 	@Autowired
-	JwtUtil jwtUtil;
+	private JwtUtil jwtUtil;
 	
 	private static final String SUCCESS = "succes";
 	private static final String FAIL = "fail";
@@ -49,22 +49,14 @@ public class UserRestController {
 		try {
 			if ((user.getUserId() != null || user.getUserId().length() > 0) && (user.getUserPw() != null || user.getUserPw().length() > 0)) {
 				// DB 유저 정보 확인
-				User loginUser = us.login(user.getUserId());
-				System.out.println("여기는 컨트롤러");
-				System.out.println(user.getUserId());
+				Map<String, String> loginUser = us.login(user.getUserId());
 				
-				System.out.println(encryptUtil.doEncrypt(user.getUserPw()));
-				System.out.println("여기서오류나나 ??");
-				System.out.println(loginUser.getUserPw());
-				
-				if(loginUser != null && encryptUtil.doEncrypt(user.getUserPw()).equals(loginUser.getUserPw())) { // 존재하는 ID + 비밀번호 암호화한 결과가 일치
-					result.put("access-token", jwtUtil.createToken("id", loginUser.getUserId()));
+				if(loginUser != null && encryptUtil.doEncrypt(user.getUserPw()).equals(loginUser.get("userPw"))) { // 존재하는 ID + 비밀번호 암호화한 결과가 일치
+					result.put("access-token", jwtUtil.createToken("id", loginUser.get("userId")));
 					result.put("message", SUCCESS);
-					result.put("userId", loginUser.getUserId());
+					result.put("userId", loginUser.get("userId"));
 					status = HttpStatus.ACCEPTED;
-					System.out.println(result);
 				} else {
-					System.out.println("여기???");
 					result.put("message", FAIL);
 					status = HttpStatus.NO_CONTENT;
 				}

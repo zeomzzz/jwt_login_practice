@@ -21,11 +21,15 @@ export default new Vuex.Store({
 
   actions: {
     doLogin({ commit }, user){
+      console.log(user);
       const API_URL = `${USER_REST_API}/login`;
       axios({
         url: API_URL,
         method: "POST",
-        params: user,
+        params: {
+          userId: user.userId,
+          userPw: user.userPw,
+        },
       })
       .then((res) => {
         sessionStorage.setItem("access-token", res.data["access-token"]);

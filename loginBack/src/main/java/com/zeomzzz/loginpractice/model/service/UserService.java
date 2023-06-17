@@ -1,5 +1,7 @@
 package com.zeomzzz.loginpractice.model.service;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 
 import com.zeomzzz.loginpractice.model.dto.User;
@@ -7,6 +9,6 @@ import com.zeomzzz.loginpractice.model.dto.User;
 @Service
 public interface UserService {
 
-	User login(String userId);
+	Map<String, String> login(String userId);
 
 }

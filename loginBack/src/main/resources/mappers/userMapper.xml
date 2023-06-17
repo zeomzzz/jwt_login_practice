@@ -5,10 +5,11 @@
 <mapper namespace="com.zeomzzz.loginpractice.model.dao.UserDao">
 
 	<!-- 로그인 -->
-	<select id="selectById" parameterType="String" resultType="User">
-		SELECT *
-		FROM USER
-		WHERE user_id = #{userId}
+	<select id="selectById" parameterType="string" resultType="map">
+		SELECT user_id AS userId,
+			user_pw AS userPw
+		FROM USERS
+ 		WHERE user_id = #{userId}
 	</select>
 
 </mapper>

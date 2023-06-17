@@ -1,9 +1,11 @@
 package com.zeomzzz.loginpractice.model.dao;
 
+import java.util.Map;
+
 import com.zeomzzz.loginpractice.model.dto.User;
 
 public interface UserDao {
 
-	User selectById(String userId);
+	Map<String, String> selectById(String userId);
 
 }
