@@ -2,7 +2,7 @@ import axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
 // import axios from "axios";
-// import router from "../router";
+import router from "../router";
 
 Vue.use(Vuex);
 
@@ -34,7 +34,8 @@ export default new Vuex.Store({
       .then((res) => {
         sessionStorage.setItem("access-token", res.data["access-token"]);
         commit;
-        console.log(res.data);
+
+        router.push({ name: "Home" });
       })
       .catch((err) => {
         console.log(err);
