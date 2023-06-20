@@ -10,11 +10,11 @@
 
 ## 구현 화면
 - 메인 화면 <br>
-![1](https://github.com/zeomzzz/jwt_login_practice/assets/107301060/9174e7d0-4c76-4d14-b01e-05c13c22fb7f)
+![1](https://github.com/zeomzzz/jwt_login_practice/assets/107301060/3c6d26fd-1307-45b1-906d-3b4fd4163a0e)
 - 로그인 <br>
-![2](https://github.com/zeomzzz/jwt_login_practice/assets/107301060/3fcdada4-1b47-43c8-a0a5-b30bc004a8ed)
+![2](https://github.com/zeomzzz/jwt_login_practice/assets/107301060/decf4f1e-1aab-40bf-97f3-ecd17246b76d)
 - 로그인 후 서비스 화면 진입 <br>
-![3](https://github.com/zeomzzz/jwt_login_practice/assets/107301060/0babcfac-a9b0-4e6c-b0ea-1acc7993ce12)
+![3](https://github.com/zeomzzz/jwt_login_practice/assets/107301060/4b263b74-baa5-415d-90d4-daa696ef3092)
 
 <br>
 
