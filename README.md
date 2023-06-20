@@ -1,6 +1,6 @@
 # JWT 로그인 구현 연습
 
-- 사용 스택 : SpringBoot, Vue.js, MySql, JWT
+- 사용 스택 : SpringBoot, Vue.js, MySql, MyBatis
 - 구현 사항
     - JWT 토큰을 이용한 로그인 처리
         - 로그인 완료 후 사용자 정보를 서비스 페이지로 전달할 때에도 토큰 정보 활용
