@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>Home.vue</h2>
     <h2>{{ loginId }}님 안녕하세요!</h2>
   </div>
 </template>
