@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- name space는 UserRepo의 fully qualified name으로 설정한다. -->
+<mapper namespace="com.zeomzzz.loginpractice.model.dao.UserDao">
+
+	<!-- 로그인 -->
+	<select id="selectById" parameterType="string" resultType="map">
+		SELECT user_id AS userId,
+			user_pw AS userPw
+		FROM USERS
+ 		WHERE user_id = #{userId}
+	</select>
+
+</mapper>

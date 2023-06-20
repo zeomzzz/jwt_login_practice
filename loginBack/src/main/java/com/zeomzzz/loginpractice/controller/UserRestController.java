@@ -53,13 +53,15 @@ public class UserRestController {
 				Map<String, String> loginUser = us.login(user.getUserId());
 				
 				if(loginUser != null && encryptUtil.doEncrypt(user.getUserPw()).equals(loginUser.get("userPw"))) { // 존재하는 ID + 비밀번호 암호화한 결과가 일치
+
 					String token = jwtUtil.createToken("id", loginUser.get("userId"));
 					result.put("access-token", token);
 					result.put("message", SUCCESS);
 					result.put("userId", loginUser.get("userId"));
 					status = HttpStatus.ACCEPTED;
 					
-					System.out.println(new String(Base64.getDecoder().decode(token.split("\\.")[1])));
+//					System.out.println(new String(Base64.getDecoder().decode(token.split("\\.")[1])));
+
 				} else {
 					result.put("message", FAIL);
 					status = HttpStatus.NO_CONTENT;
